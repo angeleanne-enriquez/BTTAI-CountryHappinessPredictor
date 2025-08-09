@@ -16,6 +16,8 @@ I then checked for any missing values, which resulted in 330 examples with missi
 
 To ensure that the features would provide good predictability for the label, I checked the correlation between the features and the labels. A strong correlation score is closer to -1 or 1. All of the features except 'Confidence in national government' had a moderately strong score at around -0.5 or 0.5. 'Confidence in national government' had a correlation score of -0.04. However, after visualizing the correlations with a Seaborn pairplot, there is a noticeable trend where lower values of the features lead to lower values of happiness. In order words, the more negatively perceived a government is, the less happy the country is. 
 
+![Seaborn pairplot of correlation](https://github.com/angeleanne-enriquez/BTTAI-CountryHappinessPredictor/blob/main/Correlation.png)
+
 ## Model Approach
 I chose two AI models to train and test: Logistic Regression and Random Forest. Logistic Regression is a linear model that allows me to better interpret how each feature affects the predictability of the label and work better for small datasets, like this one, which only has 1232 examples. I thought it would also suit the features well due to their moderately strong correlation with the label. On the other hand, Random Forest is a set of Decision Tree models that samples n examples randomly with replacement, fits a decision tree with that data, and adds that tree to the ensemble. While this model takes more time to train and is more difficult to interpret than Logistic Regression, it typically has a higher accuracy and can handle nonlinear relationships better than Logistic Regression. 
 
@@ -32,4 +34,3 @@ I was naive to think that eliminating 330 examples from a 1562-example dataset w
 I also failed to address class imbalances in my dataset, which can have a negative impact on my model's predictability. Next time, I could have either downsamples or upsampled my dataset to ensure that there is an even amount of positive and negative cases for the model to train from. 
 
 While the model's predictability was decent, it most definitely could have been better with these revisions. 
-
